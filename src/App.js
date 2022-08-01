@@ -40,7 +40,15 @@ function App() {
         {/* Buttons */}
         <div className="btn-container">
           {jobs.map((item, index) => {
-            return <button>{item.company}</button>;
+            return (
+              <button
+                key={item.id}
+                onClick={() => setValue(index)}
+                className={`job-btn ${index === value && "active-btn"}`}
+              >
+                {item.company}
+              </button>
+            );
           })}
         </div>
         {/* job info */}
